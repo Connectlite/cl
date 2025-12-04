@@ -1,0 +1,73 @@
+:root{--bg:#f8fafc}
+html,body,#root{height:100%}
+/* App styles moved from inline/class utilities to semantic classes */
+:root{
+	--bg-light: #f9fafb;
+	--bg-dark: #0f172a;
+	--card-dark: #1f2937;
+	--muted: #6b7280;
+	--text-dark: #111827;
+	--purple: #7c3aed;
+}
+
+body { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; margin:0 }
+
+.app-root { min-height: 100vh; padding: 1.5rem; background: var(--bg-light); color: var(--text-dark); }
+.app-root.dark { background: var(--bg-dark); color: #fff; }
+
+.loading-screen { min-height:100vh; display:flex; align-items:center; justify-content:center; color:var(--muted); background:var(--bg-light); }
+.loading-screen.dark { background: #0b1220; color:#9ca3af }
+
+.container { max-width:72rem; margin-left:auto; margin-right:auto }
+.header { display:flex; align-items:center; justify-content:space-between }
+.brand { display:flex; align-items:center; gap:0.75rem; cursor:pointer }
+.logo { width:2rem; height:2rem; border-radius:0.5rem; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; background: linear-gradient(45deg,#7c3aed,#ec4899) }
+.title { font-size:1.125rem; font-weight:700 }
+.controls { display:flex; align-items:center; gap:0.75rem }
+.search-input { display:none }
+@media(min-width:768px){ .search-input { display:block } }
+.search-input input { padding:0.5rem 0.75rem; border-radius:9999px; border:1px solid #e5e7eb }
+.icon-btn { padding:0.5rem; border-radius:9999px; background:transparent; border:0 }
+.icon-btn:hover { background:#f3f4f6 }
+
+.main { margin-top:1.5rem }
+.card { background:#fff; padding:1rem; border-radius:0.5rem; box-shadow:0 1px 2px rgba(0,0,0,0.05); margin-bottom:1.5rem }
+.card.dark { background:var(--card-dark) }
+
+.muted { font-size:0.875rem; color:#4b5563 }
+.muted.dark { color:#d1d5db }
+
+.post-row { display:flex; gap:0.5rem }
+.input { flex:1; padding:0.5rem 0.75rem; border-radius:0.25rem; border:1px solid #e5e7eb }
+.btn-primary { padding:0.5rem 1rem; background:var(--purple); color:#fff; border-radius:0.25rem; border:0 }
+
+.posts { display:block }
+.posts > * + * { margin-top:1rem }
+.empty { text-align:center; padding:2.5rem 0; color:var(--muted) }
+
+.post-card { background:#fff; padding:1rem; border-radius:0.5rem; box-shadow:0 1px 2px rgba(0,0,0,0.05) }
+.post-card.dark { background:var(--card-dark) }
+.post-top { display:flex; align-items:center; justify-content:space-between }
+.author { display:flex; align-items:center; gap:0.75rem }
+.avatar { width:2.5rem; height:2.5rem; border-radius:9999px; object-fit:cover }
+.date { font-size:0.75rem; color:#6b7280 }
+.share-btn { padding:0.5rem; border-radius:0.25rem; background:transparent; border:0 }
+.share-btn:hover { background:#f3f4f6 }
+.post-desc { margin-top:0.75rem; color:var(--text-dark) }
+.post-desc.dark { color: #e5e7eb }
+
+/* utilities used by JS toggles */
+.hidden { display:none }
+
+/* When html has .dark, flip some defaults */
+html.dark .app-root { background:var(--bg-dark); color:#fff }
+html.dark .card { background:var(--card-dark); }
+html.dark .muted { color:#d1d5db }
+html.dark .post-desc { color: #e5e7eb }
+
+/* small helpers */
+.font-semibold { font-weight: 600 }
+.mb-2 { margin-bottom: 0.5rem }
+.mb-4 { margin-bottom: 1rem }
+.card-title { font-weight: 600; margin-bottom: 0.5rem }
+.dark body{background:#0f172a}
